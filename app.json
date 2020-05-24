@@ -1,0 +1,17 @@
+{
+  "name": "GloNote",
+  "displayName": "GloNote",
+  "expo": {
+    "name": "GloNote",
+    "slug": "GloNote",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
