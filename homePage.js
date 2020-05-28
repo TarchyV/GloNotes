@@ -5,6 +5,14 @@ import Grid from './node_modules/@material-ui/core/Grid';
 import { Paper, Fab } from './node_modules/@material-ui/core';
 import { makeStyles } from './node_modules/@material-ui/core/styles';
 import AddIcon from '@material-ui/icons/Add'
+import { db } from './config'
+
+let addItem = item => {
+  db.ref('/notes/' + item).update({
+    'title' : 'null',
+    'note' : 'null'
+  })
+}
 class HomePage extends React.Component {
 
 
@@ -34,9 +42,13 @@ class HomePage extends React.Component {
         },
       }));
 
-     
-       
-      
+
+      createKey = () =>{
+        let r = Math.random().toString(36).substring(2)
+        addItem(r);
+
+       }
+
 
 
 
@@ -56,7 +68,7 @@ class HomePage extends React.Component {
                         bottom: 10,
                         right: 10,
                         backgroundColor: "#E4B363"
-            }}>
+            }} onClick= {() => this.createKey(this) }>
               <AddIcon />
 
             </Fab>
